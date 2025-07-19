@@ -1,0 +1,8 @@
+import("//build/templates/build_template.gni")
+build_rust("bare_metal") {
+  crate_type = "rlib"
+  sources = [ "src/lib.rs" ]
+  edition = "2015"
+  features = [ "const-fn" ]
+  rustflags = [ "--cap-lints=allow" ]
+}
